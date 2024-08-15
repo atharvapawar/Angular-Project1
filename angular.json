@@ -98,12 +98,18 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js","./node_modules/bootstrap/dist/js/bootstrap.min.js","./node_modules/popper/index.js"
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "e1f37953-fb7b-4c48-9c3f-b35734f4a799"
   }
 }
