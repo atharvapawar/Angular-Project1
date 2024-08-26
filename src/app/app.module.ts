@@ -11,6 +11,10 @@ import { FooterComponent } from './footer/footer.component';
 import { SideComponent } from './side/side.component';
 import { MainComponent } from './main/main.component';
 import { ContactModule } from './contact/contact.module';
+import { FormsModule } from '@angular/forms';
+import { FahrPipe } from './fahr.pipe';
+import { CapsPipe } from './caps.pipe';
+import { RepeatPatternPipe } from './repeat-pattern.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,10 @@ import { ContactModule } from './contact/contact.module';
     HeaderComponent,
     FooterComponent,
     SideComponent,
-    MainComponent
+    MainComponent,
+    FahrPipe,
+    CapsPipe,
+    RepeatPatternPipe
   ],
   imports: [
     BrowserModule,
@@ -26,7 +33,8 @@ import { ContactModule } from './contact/contact.module';
     MatButtonModule,
     MatIconModule,
     MatSlideToggleModule,
-    ContactModule
+    ContactModule,
+    FormsModule
   ],
   providers: [
     provideAnimationsAsync()
