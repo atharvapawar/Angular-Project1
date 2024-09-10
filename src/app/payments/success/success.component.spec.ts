@@ -6,12 +6,10 @@ describe('SuccessComponent', () => {
   let component: SuccessComponent;
   let fixture: ComponentFixture<SuccessComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       declarations: [SuccessComponent]
-    })
-    .compileComponents();
-
+    });
     fixture = TestBed.createComponent(SuccessComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -1,0 +1,141 @@
+<button (click)="toggleVisibility()"> Toggle Hide/Show </button>
+<div [appToggleVisibility]="isVisible">
+  <h1>Apple</h1>
+  <p>An apple a day keeps the doctor away</p>
+  <i>These trees grow well in Kashmir</i>
+</div>
+
+<h1>First and Last Elements</h1>
+<div *ngFor="let employee of employees;first as f; last as l">
+  <h1 style="background-color: pink;" *ngIf="f||l else flag" >
+    {{employee.ename}} {{employee.eid}}  {{employee.eage}}
+  </h1>
+  <ng-template #flag>
+    <h1 style="background-color: salmon;">
+      {{employee.ename}} {{employee.eid}}  {{employee.eage}}
+    </h1>
+  </ng-template> 
+</div>
+<h1> Even and Odd Elements</h1>
+<div *ngFor="let employee of employees;odd as o; even as e; index as i">
+  <h1 style="background-color: rgb(227, 227, 73);" *ngIf="e else flag" >
+    {{i}} {{employee.ename}} {{employee.eid}}  {{employee.eage}}
+  </h1>
+  <ng-template #flag>
+    <h1 style="background-color: rgb(208, 163, 158);">
+     {{i}} {{employee.ename}} {{employee.eid}}  {{employee.eage}}
+    </h1>
+  </ng-template> 
+</div>
+
+<h1>Switch - Structural Directive</h1>
+
+<div [ngSwitch]="vowel.toLowerCase()">
+  <h1 *ngSwitchCase="'a'">{{vowel}} is a vowel</h1>
+  <h1 *ngSwitchCase="'e'">{{vowel}} is a vowel</h1>
+  <h1 *ngSwitchCase="'i'">{{vowel}} is a vowel</h1>
+  <h1 *ngSwitchCase="'o'">{{vowel}} is a vowel</h1>
+  <h1 *ngSwitchCase="'u'">{{vowel}} is a vowel</h1>
+  <h1 *ngSwitchDefault>{{vowel}} is a consonent</h1>
+</div>
+
+<h1>Attribute Directives - ngStyle</h1>
+ NgStyle/style 
+<h1 style="color:red">Static Style Attribute</h1>
+
+<div *ngIf="isAdmin else user1">
+  <h1 [ngStyle]="{'color':adminTextColor, 'background-color':'wheat'}">Hello Admin</h1>
+</div>
+<ng-template #user1>
+  <h1 [ngStyle]="{'color':userTextColor, 'border':'2px solid brown'}">Hello User</h1>
+</ng-template>
+<br/>
+
+<h1>Attribute Directives - ngClass</h1>
+<div class='myClass'>Static Class Attribute</div>
+<br/>
+
+<div *ngIf="isAdmin else user2">
+  <h1 [ngClass]="'adminClass'">Hello Admin</h1>
+</div>
+<ng-template #user2>
+  <h1 [ngClass]="'userClass'">Hello User</h1>
+</ng-template>
+<br/>
+<h1 [ngClass]="isAdmin?'adminClass':'userClass'">Hello Arshad!</h1>
+<br/>
+
+<h1>Custom Directives</h1>
+<h2 appCustomHighlight>Some paragraph is written here, keep mouse over this para to 
+  get highlight effect</h2>
+  <h2 appCustomHighlight="salmon">Some paragraph is written here, keep mouse over this para to 
+    get highlight effect of salmon color</h2>
+    <h2 appCustomHighlight="lightblue">Some paragraph is written here, keep mouse over this para to 
+      get highlight effect of blue</h2>
+      <h2 appCustomHighlight="pink">Some paragraph is written here, keep mouse over this para to 
+        get highlight effect of pink color</h2>
+
+ 
+ STRUCTURAL DIRECTIVE 
+<h1>Find the Greatest Number</h1>
+
+<p *ngIf="num1 > num2">The greater number is: {{ num1 }}</p>
+<p *ngIf="num2 > num1">The greater number is: {{ num2 }}</p>
+<p *ngIf="num1 === num2">Both numbers are equal: {{ num1 }}</p>
+
+<h1 *ngFor="let num of numbers">
+  {{num}}
+</h1>
+
+<ol >
+  <li *ngFor="let name of names" >{{name}}</li>
+</ol>
+
+<table>
+  <thead>
+    <th>Emp.ID</th>
+    <th>Emp.Name</th>
+    <th>Emp.Age</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{employee.eid}}</td>
+      <td>{{employee.ename}}</td>
+      <td>{{employee.eage}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <th>First value</th>
+    <th>Last value</th>
+    <th>Odd value</th>
+    <th>Even value</th>
+    <th>Index</th>
+    <th>Emp.ID</th>
+    <th>Emp.Name</th>
+    <th>Emp.Age</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees; index as i; first as f;last as l;even as e; odd as o; ">
+      <td>{{f}}</td>
+      <td>{{l}}</td>
+      <td>{{o}}</td>
+      <td>{{e}}</td>
+      <td>{{i}}</td>
+      <td>{{employee.eid}}</td>
+      <td>{{employee.ename}}</td>
+      <td>{{employee.eage}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button (click)="toggleUser()"> Toggle User</button>
+<div *ngIf="isAdmin else user">
+  <h1>Hello Admin</h1>
+</div>
+<ng-template #user>
+  <h1>Hello User</h1>
+</ng-template>
+

@@ -1,0 +1,36 @@
+<form #addCustomerForm="ngForm">
+    <label>Customer Name</label>
+    <input type="text" id="customerName" name="customerName" [(ngModel)]="customerName" /><br>
+    <label> Terms and Conditions</label>
+    <input type="checkbox" id="terms" name="terms" [(ngModel)]="terms" /> <br/>
+    <label> Type of Customer</label>
+    <select name="customerType" [(ngModel)]="customerType"> <br/>
+        <option></option>
+        <option>Premium</option>
+        <option>Standard</option>
+    </select><br/>
+    <label> Any comments </label>
+    <textarea name="description" [(ngModel)]="description"></textarea>
+
+    <button (click)="add(addCustomerForm)">Submit</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Terms</th>
+            <th>Description</th>
+            <th>Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let customer of customerArray">
+            <td>{{customer.customerName}}</td>
+            <td>{{customer.terms}}</td>
+            <td>{{customer.description}}</td>
+            <td>{{customer.customerType}}</td>
+        </tr>
+    </tbody>
+</table>
+

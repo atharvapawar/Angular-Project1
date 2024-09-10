@@ -1,55 +1,41 @@
-<p>databinding-examples works!</p>
-
 <h1>{{title}}</h1>
 <h2>{{num}}</h2>
 <h3>{{isMarried}}</h3>
 <ul>
-    <li>{{even[0]}}</li>
-    <li>{{even[1]}}</li>
-    <li>{{even[2]}}</li>
-    <li>{{even[3]}}</li>
+  <li>{{ even[0] }}</li>
+  <li>{{ even[1] }}</li>
+  <li>{{ even[2] }}</li>
+  <li>{{ even[3] }}</li>
 </ul>
+<p>{{ student.id }}</p>
+<p>{{ student.name }}</p>
+<p>{{ student.age }}</p>
 
-<p>{{student.id}}</p>
-<p>{{student.name}}</p>
-<p>{{student.age}}</p>
+<img [src]="imgSrc" [alt]="altString" [width]="imgWidth" [height]="imgHeight">
+<p [style.color]="paraColor">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+  Soluta eos amet expedita sint est! Commodi mollitia suscipit quas odit ducimus dolore 
+  similique animi officiis illum. Velit ea officiis maxime voluptates!</p>
 
-<p>{{fruit}}</p>
-<p>{{mark}}</p>
-<p>{{isAdmin}}</p>
-<p>{{odd}}</p>
-<p>{{employee}}</p>
-<p>{{avj}}</p>
-<p>{{vegetables}}</p>
-
-<img [src]="imgsrc" [alt]="altString" [width]="imgWidth" [height]="imgHeight">
-<p [style.color]="paraColor">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, asperiores.</p>
-<br>
-
-<table [style.width]=" '100%' ">
+  <table [style.width]="  '100%'   ">
     <tr>
-        <th [attr.colspan]="tableColSpan">Name</th>
-        <th>Age</th>
+      <th [attr.colspan]="tableColSpan">Name</th>
+      <th>Age</th>
     </tr>
     <tr>
-        <td>Jill</td>
-        <td>Smith</td>
-        <td [attr.rowspan]="tableRowSpan">43</td>
+      <td>Jill</td>
+      <td>Smith</td>
+      <td [attr.rowspan]="tableRowSpan">43</td>
     </tr>
     <tr>
-        <td>Eve</td>
-        <td>Jackson</td>
+      <td>Eve</td>
+      <td>Jackson</td>
     </tr>
-</table>
+  </table>
 
-<br>
-<button (click)="sendNotification()">Alert me!</button>
-<button (mouseover)="changeColor()" (mouseout)="OrignalColor()">Change Color!</button>
-<br>
-<h1 [style.color]="isAdmin ? 'red' : 'violet'">Hello User</h1>
+  <button (click)="sendNotification()">alert me!</button>
 
-<button (click)="ToggleUser()">Toggle</button>
+  <button (mouseover)="changeColor()" 
+  (mouseout)="originalColor()" >change Para Color</button>
 
-<input type="password" name="" id="password" [(ngModel)]="password">
-<button (click)="printData()">Print</button>
-<h1>{{ password.length<5?"Weak":"Strong"}}</h1>
+  <h1 [style.color]="isAdmin ?'red':'violet'">Hello User</h1>
+  <button (click)="toggleUser()" >toggle</button>

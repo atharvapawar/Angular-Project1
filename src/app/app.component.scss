@@ -1,0 +1,42 @@
+.d1{
+    color:red;
+}
+
+.abc{
+    color:brown;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+.myClass{
+    color: brown;
+    background-color: yellowgreen;
+    border-radius: 5px;
+    border:2px solid black;
+    margin:auto;
+    display:inline;
+    font-size:40px;
+    width:fit-content;
+}
+.adminClass{
+    color: grey;
+    background-color: black;
+    border-radius: 5px;
+    border:2px solid greenyellow;
+    margin:auto;
+    display:inline;
+    font-size:40px;
+    width:fit-content;
+}
+.userClass{
+    color: blue;
+    background-color: aquamarine;
+    border-radius: 5px;
+    border:2px solid rgb(167, 154, 239);
+    margin:auto;
+    display:inline;
+    font-size:40px;
+    width:fit-content;
+}

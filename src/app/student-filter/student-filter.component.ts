@@ -3,10 +3,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-student-filter',
   templateUrl: './student-filter.component.html',
-  styleUrl: './student-filter.component.scss'
+  styleUrls: ['./student-filter.component.scss'],
 })
 export class StudentFilterComponent {
-  filterText:any='';
+  filterText: any;
   students: any = [
     {
       name: 'Abhay',
@@ -52,7 +52,13 @@ export class StudentFilterComponent {
     },
   ];
 
-  addStudent(){
-    this.students.push({name: 'Georgia',course: 'Accounts',marks: 71,dob: new Date('8,4,1998'),gender: 'Female'});
+  addStudent() {
+    this.students.push({
+      name: 'Georgia',
+      course: 'Accounts',
+      marks: 71,
+      dob: new Date('8,9,1993'),
+      gender: 'Female',
+    });
   }
 }

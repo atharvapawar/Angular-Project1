@@ -1,49 +1,57 @@
+
+<input type="text" id="fname" [(ngModel)]="fname"/>
+<input type="text" id="laname" [(ngModel)]="laname"/>
+<h1>FullName: {{fname | caps:laname}}</h1>
+
+<input type="text" id="repeatString" [(ngModel)]="repeatString"/>
+<input type="text" id="noOfTimes" [(ngModel)]="noOfTimes"/>
+<input type="text" id="symbol" [(ngModel)]="symbol"/>
+  
+
+  <h1>{{'welcome' | repeatPattern:5:'/'}}</h1>
+  <h1>{{'hello' | repeatPattern:15:'-'}}</h1>
+
+<input type="password" id="passw" [(ngModel)]="password" />
+
+<h1>{{password.length<5?"Weak":"Strong"}}</h1>
+
 <h1>Pipes</h1>
-<h1>{{ sname|lowercase}}</h1>
-<h1>{{ lname|uppercase}}</h1>
-<h1>{{ totalPer|percent}}</h1>
-<h1>{{ amount|currency}}</h1>
-<h1>{{ obj|json}}</h1>
-<h1>{{ dob|date}}</h1>
-<br>
-<h1>parameterized Pipes</h1>
-<h1>{{ amount|currency:'INR'}}</h1>
-<h1>{{ amount|currency:'GBP'}}</h1>
-<h1>{{ amount|currency:''}}</h1>
-<h1>{{ amount|currency:'EUR'}}</h1>
-<h1>{{ amount|currency:'JPY'}}</h1>
+<h1>{{sname}} ---- {{sname|lowercase}} </h1>
+<h1>{{lname}} ---- {{lname|uppercase}}</h1>
+<h1>{{totalPer}} ---- {{totalPer|percent}}</h1>
+<h1>{{amount}} ---- {{amount |currency}}</h1>
+<h1>{{obj}}  --- {{obj | json}}</h1>
+<h1>{{dob}}  --- {{dob|date}}</h1>
+
+<h1>Parameterised Pipes</h1>
+<h1>{{totalPer}} ---- {{totalPer|percent}}</h1>
+<h1>{{amount}} ---- {{amount |currency:'CAD'}}</h1>
+<h1>{{amount}} ---- {{amount |currency:'EUR'}}</h1>
+<h1>{{amount}} ---- {{amount |currency:'INR'}}</h1>
+<h1>{{amount}} ---- {{amount |currency:'inr'}}</h1>
+<h3>{{dob | date:'short'}}</h3>
+<h3>{{dob | date:'medium'}}</h3>
+<h3>{{dob | date:'long'}}</h3>
+<h3>{{dob | date:'full'}}</h3>
+<h3>{{dob | date:'shortDate'}}</h3>
+<h3>{{dob | date:'mediumDate'}}</h3>
+<h3>{{dob | date:'longDate'}}</h3>
+<h3>{{dob | date:'fullDate'}}</h3>
+<h3>{{dob | date:'shortTime'}}</h3>
+<h3>{{dob | date:'mediumTime'}}</h3>
+<h3>{{dob | date:'longTime'}}</h3>
+<h3>{{dob | date:'fullTime'}}</h3>
+<h3>{{ totalPer | percent:'7.5-6' }}</h3>
 
 
-<h1>{{ dob|date}}</h1>
-<h1>{{ dob|date:'short'}}</h1>
-<h1>{{ dob|date:'medium'}}</h1>
-<h1>{{ dob|date:'long'}}</h1>
-<h1>{{ dob|date:'full'}}</h1>
-<h1>{{ dob|date:'shortDate'}}</h1>
-<h1>{{ dob|date:'mediumDate'}}</h1>
-<h1>{{ dob|date:'longDate'}}</h1>
-<h1>{{ dob|date:'fullDate'}}</h1>
-<h1>{{ dob|date:'shortTime'}}</h1>
-<h1>{{ dob|date:'mediumTime'}}</h1>
-<h1>{{ dob|date:'longTime'}}</h1>
-<h1>{{ dob|date:'fullTime'}}</h1>
-<br> 
 
-<h1>Chained Pipes</h1>
-<h1>{{ dob|date:'full'|lowercase}}</h1>
+<h1>{{0.34623456 | percent}}</h1>
+<h1>{{0.34623456 | percent:'4.0-3'}}</h1>
+<h1>{{0.34623456 | percent:'4.7-8'}}</h1>
 
-<h1>Custom Pipe - Celsius to Fahr</h1>
-<input type="text" id="cel" [(ngModel)]="celcius">
+<h1> Chained Pipe </h1>
+<h1>{{dob | date:'full' | uppercase}}</h1>
+
+<h1>Custom Pipe - Celcius to Fahr</h1>
+<input type="text" id="cel" [(ngModel)] = "celcius" />
 <h1>{{celcius | fahr}}</h1>
-
-<input type="text" id="fname" [(ngModel)]="fname">
-<input type="text" id="laname" [(ngModel)]="laname">
-<h1>Fullname : {{fname | caps:laname}}</h1>
-
-<input type="text" id="repeatString" [(ngModel)]="repeatString">
-<input type="text" id="noOfTimes" [(ngModel)]="noOfTimes">
-<input type="text" id="symbol" [(ngModel)]="symbol">
-
-<h1>{{repeatString | repeatPattern:noOfTimes:symbol}}</h1>
-<h1>{{'hello' | repeatPattern:5:'#'}}</h1>
-

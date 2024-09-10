@@ -6,12 +6,10 @@ describe('DatabindingExamplesComponent', () => {
   let component: DatabindingExamplesComponent;
   let fixture: ComponentFixture<DatabindingExamplesComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       declarations: [DatabindingExamplesComponent]
-    })
-    .compileComponents();
-
+    });
     fixture = TestBed.createComponent(DatabindingExamplesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
