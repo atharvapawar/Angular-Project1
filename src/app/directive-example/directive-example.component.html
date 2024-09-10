@@ -1,0 +1,52 @@
+<p>directive-example works!</p>
+<h1>First and Last Elements</h1>
+<div *ngFor="let employee of employees;first as f;last as l">
+    <h3 style="background-color: pink;"  *ngIf="f||l else flag">{{employee.eid}} {{employee.ename}} {{employee.eage}}</h3>
+    <ng-template #flag >
+        <h3 style="background-color: orange;">{{employee.eid}} {{employee.ename}} {{employee.eage}}</h3>
+    </ng-template>
+</div>
+
+<h1>Even and Odd Elements</h1>
+<div *ngFor="let employee of employees;odd as o;even as e">
+    <h3 style="background-color: rebeccapurple;"  *ngIf="e else flag">{{employee.eid}} {{employee.ename}} {{employee.eage}}</h3>
+    <ng-template #flag >
+        <h3 style="background-color: greenyellow;">{{employee.eid}} {{employee.ename}} {{employee.eage}}</h3>
+    </ng-template>
+</div>
+
+<h1>Switch - Structural Directive</h1>
+
+<div [ngSwitch]="vowel.toLowerCase">
+    <h1 *ngSwitchCase="'a'">{{vowel}} is vowel</h1>
+    <h1 *ngSwitchCase="'e'">{{vowel}} is vowel</h1>
+    <h1 *ngSwitchCase="'i'">{{vowel}} is vowel</h1>
+    <h1 *ngSwitchCase="'o'">{{vowel}} is vowel</h1>
+    <h1 *ngSwitchCase="'u'">{{vowel}} is vowel</h1>
+    <h1 *ngSwitchDefault>"{{vowel}}" is consonent</h1>
+</div>
+
+<h1>Attribute Directive ngClass</h1>
+<h1 style="color: red;">Static Style Attribute</h1>
+<h1 [style.color]="colorVairable">Style Attribute</h1>
+
+<div *ngIf="isAdmin else user1">
+    <h1 [ngClass]="'adminClass'">Hello Admin</h1>
+</div>
+<ng-template #user1>
+    <h1 [ngClass]="'userClass'">Hello User</h1>
+</ng-template>
+
+<h1 [ngClass]="isAdmin?'adminClass':'userClass'">Hello Atharv!</h1>
+
+<h1>Custom Directives</h1>
+<h2 appCustomHighlight>Some paragraph is written here, keep mouse over it.</h2><br>
+<h3 appCustomHighlight="salmon">Some paragraph2 is written here, keep mouse over it.</h3><br>
+<h3 appCustomHighlight="lightblue">Some paragraph2 is written here, keep mouse over it.</h3>
+
+<div [appToggleVisibility]="isVisible" appCustomHighlight="khaki">
+    <h1>Apple</h1>
+    <p>An Apple a day keeps the doctor away</p>
+    <i>These Trees grow well in kashmir</i>
+</div>
+<button (click)="toggleVisibility()">Toggle Hide/Show</button>

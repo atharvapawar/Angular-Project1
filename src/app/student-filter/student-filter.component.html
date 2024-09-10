@@ -1,0 +1,23 @@
+<p>student-filter works!</p>
+<input type="text" [(ngModel)]="filterText" placeholder="search student - 'name','course','gender'">
+<button (click)="addStudent()">Add Student</button>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Marks</th>
+            <th>DOB</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students | namefilter:filterText">
+            <td>{{student.name}}</td>
+            <td>{{student.course}}</td>
+            <td>{{student.marks}}</td>
+            <td>{{student.dob | date:'shortDate'}}</td>
+            <td>{{student.gender}}</td>
+        </tr>
+    </tbody>
+</table>

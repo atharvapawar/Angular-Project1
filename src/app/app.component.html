@@ -1,16 +1,14 @@
-<!-- <app-header></app-header>
+<app-header></app-header>
 <div class="container">
     <app-side></app-side>
     <app-main></app-main>
 </div>
 <div class="contact">
-    <app-add-contact></app-add-contact>
-    <app-delete-contact></app-delete-contact>
-    <app-edit-contact></app-edit-contact>
-    <app-view-contact></app-view-contact>
-</div>
+</div> 
 <app-footer>
-</app-footer> -->
+</app-footer>
+<!-- <app-directive-example></app-directive-example> -->
+
 
 <!-- <h1>{{title}}</h1>
 <h2>{{num}}</h2>
@@ -60,13 +58,13 @@
 <br>
 <h1 [style.color]="isAdmin ? 'red' : 'violet'">Hello User</h1>
 
-<button (click)="ToggleUser()">Toggle</button> -->
+<button (click)="ToggleUser()">Toggle</button>
 
-<!-- <input type="password" name="" id="password" [(ngModel)]="password">
+<input type="password" name="" id="password" [(ngModel)]="password">
 <button (click)="printData()">Print</button>
-<h1>{{ password.length<5?"Weak":"Strong"}}</h1> -->
+<h1>{{ password.length<5?"Weak":"Strong"}}</h1>
 
-<!-- 
+
 <h1>Pipes</h1>
 <h1>{{ sname|lowercase}}</h1>
 <h1>{{ lname|uppercase}}</h1>
@@ -96,16 +94,16 @@
 <h1>{{ dob|date:'mediumTime'}}</h1>
 <h1>{{ dob|date:'longTime'}}</h1>
 <h1>{{ dob|date:'fullTime'}}</h1>
-<br>
+<br> 
 
 <h1>Chained Pipes</h1>
 <h1>{{ dob|date:'full'|lowercase}}</h1>
 
 <h1>Custom Pipe - Celsius to Fahr</h1>
 <input type="text" id="cel" [(ngModel)]="celcius">
-<h1>{{celcius | fahr}}</h1> -->
+<h1>{{celcius | fahr}}</h1>
 
-<!-- <input type="text" id="fname" [(ngModel)]="fname">
+<input type="text" id="fname" [(ngModel)]="fname">
 <input type="text" id="laname" [(ngModel)]="laname">
 <h1>Fullname : {{fname | caps:laname}}</h1>
 
@@ -114,9 +112,9 @@
 <input type="text" id="symbol" [(ngModel)]="symbol">
 
 <h1>{{repeatString | repeatPattern:noOfTimes:symbol}}</h1>
-<h1>{{'hello' | repeatPattern:5:'#'}}</h1> -->
+<h1>{{'hello' | repeatPattern:5:'#'}}</h1>
 
-<!-- <h1>Find the Greatest number </h1>
+<h1>Find the Greatest number </h1>
 <input type="text" [(ngModel)]="num1">
 <input type="text" [(ngModel)]="num2">
 <div *ngIf="num1>num2; else part2">
@@ -158,7 +156,7 @@
         </tr>
         
     </tbody>
-</table> -->
+</table>
 <h1>First and Last Elements</h1>
 <div *ngFor="let employee of employees;first as f;last as l">
     <h3 style="background-color: pink;"  *ngIf="f||l else flag">{{employee.eid}} {{employee.ename}} {{employee.eage}}</h3>
@@ -198,3 +196,17 @@
 </ng-template>
 
 <h1 [ngClass]="isAdmin?'adminClass':'userClass'">Hello Atharv!</h1>
+
+<h1>Custom Directives</h1>
+<h2 appCustomHighlight>Some paragraph is written here, keep mouse over it.</h2><br>
+<h3 appCustomHighlight="salmon">Some paragraph2 is written here, keep mouse over it.</h3><br>
+<h3 appCustomHighlight="lightblue">Some paragraph2 is written here, keep mouse over it.</h3>
+
+<div [appToggleVisibility]="isVisible" appCustomHighlight="khaki">
+    <h1>Apple</h1>
+    <p>An Apple a day keeps the doctor away</p>
+    <i>These Trees grow well in kashmir</i>
+</div>
+<button (click)="toggleVisibility()">Toggle Hide/Show</button>
+
+-->

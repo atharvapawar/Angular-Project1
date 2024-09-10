@@ -15,6 +15,20 @@ import { FormsModule } from '@angular/forms';
 import { FahrPipe } from './fahr.pipe';
 import { CapsPipe } from './caps.pipe';
 import { RepeatPatternPipe } from './repeat-pattern.pipe';
+import { CustomHighlightDirective } from './custom-highlight.directive';
+import { ToggleVisibilityDirective } from './toggle-visibility.directive';
+import { DirectiveExampleComponent } from './directive-example/directive-example.component';
+import { PipesExampleComponent } from './pipes-example/pipes-example.component';
+import { DatabindingExamplesComponent } from './databinding-examples/databinding-examples.component';
+import { HomeComponent } from './home/home.component';
+import { LoansComponent } from './loans/loans.component';
+import { AddLoanComponent } from './loans/add-loan/add-loan.component';
+import { EditLoanComponent } from './loans/edit-loan/edit-loan.component';
+import { ProductComponent } from './product/product.component';
+import { ProductDetailsComponent } from './product/product-details/product-details.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { StudentFilterComponent } from './student-filter/student-filter.component';
+import { NamefilterPipe } from './namefilter.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +39,21 @@ import { RepeatPatternPipe } from './repeat-pattern.pipe';
     MainComponent,
     FahrPipe,
     CapsPipe,
-    RepeatPatternPipe
+    RepeatPatternPipe,
+    CustomHighlightDirective,
+    ToggleVisibilityDirective,
+    DirectiveExampleComponent,
+    PipesExampleComponent,
+    DatabindingExamplesComponent,
+    HomeComponent,
+    LoansComponent,
+    AddLoanComponent,
+    EditLoanComponent,
+    ProductComponent,
+    ProductDetailsComponent,
+    PagenotfoundComponent,
+    StudentFilterComponent,
+    NamefilterPipe
   ],
   imports: [
     BrowserModule,
